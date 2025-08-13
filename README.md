@@ -1,73 +1,50 @@
-# Welcome to your Lovable project
+# MindSight AI
 
-## Project info
+An accessibility-first platform that transforms learning materials (documents, images, audio, and videos) into personalized, accessible formats using state-of-the-art AI.
 
-**URL**: https://lovable.dev/projects/65839a9a-5b01-4c9c-b2fc-6e37f37326c9
+## Features
+- Document processing: extraction, cleanup, headings, and alt text generation
+- Audio transcription and high‑quality text‑to‑speech
+- Visual understanding: image descriptions for charts and diagrams
+- Multi-language translation and summaries
+- Real-time progress with toasts and accessible UI components
 
-## How can I edit this code?
+## Tech Stack
+- Frontend: React, Vite, TypeScript, Tailwind CSS, shadcn/ui
+- State & Data: React hooks, TanStack Query (ready), Supabase (ready)
+- Icons & Charts: lucide-react, Recharts
 
-There are several ways of editing your application.
+## Quickstart
+1. Install dependencies
+   npm i
+2. Start the dev server
+   npm run dev
+3. Open the app at the printed local URL.
 
-**Use Lovable**
+## Available Scripts
+- npm run dev: Start the app in development
+- npm run build: Build for production
+- npm run preview: Preview the production build
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/65839a9a-5b01-4c9c-b2fc-6e37f37326c9) and start prompting.
+## Project Structure
+- src/pages/Index.tsx: Main page composition
+- src/components/: UI components (Header, Hero, Features, HowItWorks, Accessibility, Pricing, ContentProcessor, Footer)
+- src/components/ui/: Reusable primitives (buttons, cards, inputs, toasts, etc.)
+- src/index.css: Design tokens, themes, and animations
 
-Changes made via Lovable will be committed automatically to this repo.
+## Using the Demo
+- Upload a file in the “Try It Now” section to simulate processing
+- Listen via text‑to‑speech or download the processed summary as a text file
+- Navigate using the header links (Features, How It Works, Accessibility, Pricing)
+- Social icons open external sites; non-implemented links show a “coming soon” toast
 
-**Use your preferred IDE**
+## Accessibility
+Built with semantic HTML, keyboard focus styles, high-contrast themes, and screen reader-friendly patterns. Animations respect reduced‑motion preferences.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Roadmap
+- Integrate Hugging Face models for real processing
+- Supabase auth and user dashboards
+- LMS/storage integrations and API endpoints
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/65839a9a-5b01-4c9c-b2fc-6e37f37326c9) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## License
+MIT © MindSight AI

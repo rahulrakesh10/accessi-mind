@@ -46,11 +46,11 @@ export const Hero = () => {
           
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up">
-            <Button variant="accent" size="xl" className="group">
+            <Button variant="accent" size="xl" className="group" onClick={() => document.getElementById('get-started')?.scrollIntoView({ behavior: 'smooth' })}>
               Start Processing Content
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button variant="outline" size="xl" className="bg-white/10 border-white/30 text-white hover:bg-white/20">
+            <Button variant="outline" size="xl" className="bg-white/10 border-white/30 text-white hover:bg-white/20" onClick={() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })}>
               Learn More
             </Button>
           </div>

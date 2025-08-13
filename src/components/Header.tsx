@@ -1,9 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Brain, Menu, X } from "lucide-react";
 import { useState } from "react";
-
+import { useToast } from "@/hooks/use-toast";
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { toast } = useToast();
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-lg border-b border-border shadow-soft">
@@ -35,8 +36,8 @@ export const Header = () => {
           
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-3">
-            <Button variant="ghost">Sign In</Button>
-            <Button variant="hero">Get Started</Button>
+            <Button variant="ghost" onClick={() => toast({ title: "Sign in coming soon", description: "Authentication will be available in the next update." })}>Sign In</Button>
+            <Button variant="hero" onClick={() => document.getElementById('get-started')?.scrollIntoView({ behavior: 'smooth' })}>Get Started</Button>
           </div>
           
           {/* Mobile Menu Button */}
@@ -53,21 +54,21 @@ export const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-border bg-background/95">
             <nav className="flex flex-col gap-4">
-              <a href="#features" className="text-muted-foreground hover:text-foreground transition-colors px-2 py-1">
+              <a href="#features" onClick={() => setIsMenuOpen(false)} className="text-muted-foreground hover:text-foreground transition-colors px-2 py-1">
                 Features
               </a>
-              <a href="#how-it-works" className="text-muted-foreground hover:text-foreground transition-colors px-2 py-1">
+              <a href="#how-it-works" onClick={() => setIsMenuOpen(false)} className="text-muted-foreground hover:text-foreground transition-colors px-2 py-1">
                 How It Works
               </a>
-              <a href="#accessibility" className="text-muted-foreground hover:text-foreground transition-colors px-2 py-1">
+              <a href="#accessibility" onClick={() => setIsMenuOpen(false)} className="text-muted-foreground hover:text-foreground transition-colors px-2 py-1">
                 Accessibility
               </a>
-              <a href="#pricing" className="text-muted-foreground hover:text-foreground transition-colors px-2 py-1">
+              <a href="#pricing" onClick={() => setIsMenuOpen(false)} className="text-muted-foreground hover:text-foreground transition-colors px-2 py-1">
                 Pricing
               </a>
               <div className="flex flex-col gap-2 pt-4 border-t border-border">
-                <Button variant="ghost" className="justify-start">Sign In</Button>
-                <Button variant="hero" className="justify-start">Get Started</Button>
+                <Button variant="ghost" className="justify-start" onClick={() => { setIsMenuOpen(false); toast({ title: "Sign in coming soon", description: "Authentication will be available in the next update." })}}>Sign In</Button>
+                <Button variant="hero" className="justify-start" onClick={() => { setIsMenuOpen(false); document.getElementById('get-started')?.scrollIntoView({ behavior: 'smooth' }); }}>Get Started</Button>
               </div>
             </nav>
           </div>

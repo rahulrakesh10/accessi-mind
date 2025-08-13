@@ -105,8 +105,22 @@ export const ContentProcessor = () => {
     }
   };
 
+  const handleDownload = () => {
+    if (!processedContent) return;
+    const blob = new Blob([processedContent], { type: 'text/plain;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'mindsight-processed.txt';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+    toast({ title: "Download started", description: "Your processed content is downloading." });
+  };
+
   return (
-    <section className="py-20 bg-background">
+    <section id="get-started" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold mb-4">
@@ -187,7 +201,7 @@ export const ContentProcessor = () => {
                         </>
                       )}
                     </Button>
-                    <Button variant="secondary" size="sm">
+                    <Button variant="secondary" size="sm" onClick={handleDownload} disabled={!processedContent}>
                       <Download className="h-4 w-4 mr-2" />
                       Download
                     </Button>
