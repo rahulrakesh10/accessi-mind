@@ -1,4 +1,4 @@
-# MindSight AI
+# MindClasp
 
 An accessibility-first platform that transforms learning materials (documents, images, audio, and videos) into personalized, accessible formats using state-of-the-art AI.
 
